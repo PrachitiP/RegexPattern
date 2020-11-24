@@ -13,6 +13,9 @@ public class PinCode {
 		System.out.println("Enter Pincode which does not start with alphabet or special character:");
 		String pin2 = sc.nextLine();
 		p.checkPincode2(pin2);
+		System.out.println("Enter Pincode does not end with alphabet or special character");
+		String pin3=sc.nextLine();
+		p.checkPincode3(pin3);
 		sc.close();
 	}
 	
@@ -45,5 +48,21 @@ public class PinCode {
 		}
 		
 	}
+	
+	public void checkPincode3(String str)
+	{
+		/*UC3*/
+		String regexforPincode3 = "^[1-9]{1}[0-9]{5}$";
+		if(Pattern.matches(regexforPincode3, str))
+		{
+			System.out.println("Pincode is valid");
+		}
+		else
+		{
+			System.out.println("Pincode is invalid");
+		}
+		
+	}
+	
 
 }
